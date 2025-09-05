@@ -42,7 +42,7 @@ We use the **jarvisx17/Medical-ASR-EN dataset** from Hugging Face.
 ### 1. Automatic Speech Recognition (ASR)
 
 *  **Whisper small a pretrained ASR model by OpenAi** was used to transcribe medical speech into text.
-* Output: raw transcription of spoken audio.
+*  Output: raw transcription of spoken audio.
 
 ### 2. Named Entity Recognition (NER)
 
