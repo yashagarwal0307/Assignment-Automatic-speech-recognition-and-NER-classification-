@@ -1,6 +1,6 @@
-# Assignment-
+# Assignment
 # Tasks- 1) convert audio to speech.
-        2) Do Named Entity Recognition on the converted speech
+         #2) Do Named Entity Recognition on the converted speech
 
 
 This project demonstrates an **end-to-end pipeline** that combines **Automatic Speech Recognition (ASR)** with **Named Entity Recognition (NER)** to extract structured medical information from spoken audio.
