@@ -24,7 +24,7 @@ This project aims to:
 * 🎤 **Speech-to-Text Conversion**: Convert audio recordings into accurate transcriptions.
 * 🏷️ **Entity Recognition**: Extract medical concepts like diseases, symptoms, and drugs.
 * 📑 **Fact Sheet Generation**: Summarize extracted information in structured form.
-* 📉 **Performance Evaluation**: Measure transcription accuracy using **Word Error Rate (WER)** and **Character Error Rate (CER)**.
+* 📉 **Performance Evaluation**: Measure transcription accuracy using **Word Error Rate (WER)**.
 
 ---
 
