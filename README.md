@@ -42,12 +42,12 @@ We use the **jarvisx17/Medical-ASR-EN dataset** from Hugging Face.
 
 ### 1. Automatic Speech Recognition (ASR)
 
-* A **Whisper-based pretrained ASR model** was used to transcribe medical speech into text.
+* A **Whisper small a pretrained ASR model by OpenAi** was used to transcribe medical speech into text.
 * Output: raw transcription of spoken audio.
 
 ### 2. Named Entity Recognition (NER)
 
-* A **medical domain NER model** was applied to identify relevant entities.
+* A **A pretrained d4data/biomedical-ner-all** was applied to identify relevant entities.
 * Categories extracted:
 
   * **Disease/Disorder**
@@ -93,11 +93,6 @@ We use the **jarvisx17/Medical-ASR-EN dataset** from Hugging Face.
    'Test': [], 
    'Anatomy': []}
   ```
-
-
----
-
----
 
 ## 📖 Conclusion
 
