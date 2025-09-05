@@ -1,4 +1,4 @@
-# Tasks- 
+# Tasks.
 1) Convert audio to speech.
 2) Do Named Entity Recognition on the converted speech.
 
@@ -7,7 +7,7 @@ This project demonstrates an **end-to-end pipeline** that combines **Automatic S
 
 ---
 
-## 📌 Project Overview
+## 📌 Project Overview.
 
 Healthcare professionals often rely on dictations, voice notes, and patient-doctor conversations. However, unstructured audio is difficult to analyze.
 This project aims to:
@@ -19,7 +19,7 @@ This project aims to:
 
 ---
 
-## 🚀 Features
+## 🚀 Features.
 
 * 🎤 **Speech-to-Text Conversion**: Convert audio recordings into accurate transcriptions.
 * 🏷️ **Entity Recognition**: Extract medical concepts like diseases, symptoms, and drugs.
@@ -28,7 +28,7 @@ This project aims to:
 
 ---
 
-## 📂 Dataset
+## 📂 Dataset.
 
 We use the **jarvisx17/Medical-ASR-EN dataset** from Hugging Face.
 
@@ -37,7 +37,7 @@ We use the **jarvisx17/Medical-ASR-EN dataset** from Hugging Face.
 
 ---
 
-## ⚙️ Methodology
+## ⚙️ Methodology.
 
 ### 1. Automatic Speech Recognition (ASR)
 
@@ -72,29 +72,23 @@ We use the **jarvisx17/Medical-ASR-EN dataset** from Hugging Face.
 ### 5. Evaluation Metrics
 
 * **Word Error Rate (WER)**: Measures transcription errors at the word level.
-
-
 ---
 
-## 📊 Example Results
+## 📊 Example Results.
 
-* **Ground Truth**: "The patient shows symptoms of pneumonia and requires antibiotics."
-* **Predicted Transcription**: "The patient shows symptoms of pneumonia and requires antibiotics."
+* **Ground Truth**: "My shoulder hurts me so much"
+* **Predicted Transcription**: "My shoulder hurts me so much.
+* Named Entities:
+ - shoulder (Biological_structure, score=0.99)
+ - hurts (Sign_symptom, score=0.76)
+
+* Extracted Medical Information/Fact Sheet:
+{'Disease': [], 'Symptom': ['hurts'], 'Medication': [], 'Test': [], 'Anatomy': ['shoulder']}
 * **Extracted Entities**:
 
-  * Disease: pneumonia
-  * Medication: antibiotics
-* **Fact Sheet**:
+ 
 
-  ```
-  {'Disease': ['pneumonia'], 
-   'Symptom': [], 
-   'Medication': ['antibiotics'], 
-   'Test': [], 
-   'Anatomy': []}
-  ```
-
-## 📖 Conclusion
+## 📖 Conclusion.
 
 This project successfully integrates **ASR + NER** for the medical domain, enabling:
 
