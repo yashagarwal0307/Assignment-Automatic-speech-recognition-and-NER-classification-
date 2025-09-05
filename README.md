@@ -67,7 +67,7 @@ We use the **jarvisx17/Medical-ASR-EN dataset** from Hugging Face.
   Test: [chest x-ray]  
   Anatomy: [lungs]  
   ```
-### 4. Map the fact sheet with the actual NER found by the model.
+### 4. Map the fact sheet with the actual NER labels in the medical domain  on which the d4data/biomedical-ner-all model was trained on.
 
 ### 5. Evaluation Metrics
 
