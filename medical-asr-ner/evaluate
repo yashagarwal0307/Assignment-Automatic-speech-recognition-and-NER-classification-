@@ -1,0 +1,62 @@
+import evaluate
+
+# Load WER metric
+wer_metric = evaluate.load("wer")
+
+wer_scores = []
+
+for i in range (5): 
+    sample=dataset[i]
+    audio = sample["audio"]["array"]
+    ground_truth = sample["transcription"]
+
+   
+    prediction = asr(audio)
+    transcribed_text = prediction["text"]
+
+    wer = wer_metric.compute(predictions=[transcribed_text], references=[ground_truth])
+    wer_scores.append(wer)
+
+    print(f"\n===== Sample {i+1} =====")
+    print(f"🔊 Ground Truth: {ground_truth}")
+    print(f"📝 Transcribed Text: {transcribed_text}")
+    print(f"📉 WER: {wer:.3f}")
+    
+    entities = ner(transcribed_text)
+
+    print("\n🏷️ Named Entities:")
+    for ent in entities:
+        print(f" - {ent['word']} ({ent['entity_group']}, score={ent['score']:.2f})")
+    
+    fact_sheet = {
+        "Disease": [],
+        "Symptom": [],
+        "Medication": [],
+        "Test": [],
+        "Anatomy": []
+    }
+
+    label_mapping = {
+        'Disease_disorder': "Disease",
+        'Sign_symptom': "Symptom",
+        'Drug': "Medication",
+        'Lab_value': "Test",
+        'Biological_structure': "Anatomy",
+        'Body_structure': "Anatomy",
+        'Body_part': "Anatomy",
+        'Therapeutic_procedure': "Test",
+        'Diagnostic_procedure': "Test",
+    }
+   
+    for ent in entities:
+        original_label = ent["entity_group"]
+        value = ent["word"]
+
+        category = label_mapping.get(original_label)
+
+        if category and value not in fact_sheet[category]:
+            fact_sheet[category].append(value)
+
+    print("\n📌 Extracted Medical Information:")
+    print(fact_sheet)
+
