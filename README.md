@@ -1,4 +1,3 @@
-# Assignment
 # Tasks- 
 1) convert audio to speech.
 2) Do Named Entity Recognition on the converted speech.
