@@ -1,0 +1,72 @@
+!pip install datasets transformers torchaudio soundfile
+!pip install evaluate
+!pip install jiwer
+
+from datasets import load_dataset, Audio
+from transformers import pipeline
+
+# 1. Load dataset
+dataset = load_dataset("jarvisx17/Medical-ASR-EN", split="train")
+
+# Decode audio to waveform
+dataset = dataset.cast_column("audio", Audio(sampling_rate=16000))
+
+# 1. Load the ASR pipeline
+asr = pipeline("automatic-speech-recognition", model="openai/whisper-base.en")
+
+ner = pipeline("ner",
+               model="d4data/biomedical-ner-all",
+               aggregation_strategy="simple")
+sample = dataset[0]
+audio = sample["audio"]["array"]
+ground_truth = sample["transcription"]
+
+# 4. Run ASR
+prediction = asr(audio)
+transcribed_text = prediction["text"]
+
+print(f"🔊 Ground Truth: {ground_truth}")
+print(f"📝 Transcribed Text: {transcribed_text}")
+
+# 5. Run NER on transcribed text
+entities = ner(transcribed_text)
+
+# Print the raw entities for debugging
+print("\n🏷️ Named Entities:")
+for ent in entities:
+    print(f" - {ent['word']} ({ent['entity_group']}, score={ent['score']:.2f})")
+
+# 6. Build a medical fact sheet with CORRECT MAPPING
+fact_sheet = {
+    "Disease": [],
+    "Symptom": [],
+    "Medication": [],
+    "Test": [],
+    "Anatomy": []
+}
+label_mapping = {
+    'Disease_disorder': "Disease",
+    'Sign_symptom': "Symptom",
+    'Drug': "Medication",
+    'Lab_value': "Test",
+    'Biological_structure': "Anatomy", # This is the key fix
+    'Body_structure': "Anatomy",       # Some models might use this
+    'Body_part': "Anatomy",            # or this
+    'Therapeutic_procedure': "Test",
+    'Diagnostic_procedure': "Test",
+}
+
+for ent in entities:
+    original_label = ent["entity_group"]
+    value = ent["word"]
+
+    # Find the best category for this label, default to None
+    category = label_mapping.get(original_label)
+
+    # Only add it if we found a valid category and it's not already in the list
+    if category and value not in fact_sheet[category]:
+        fact_sheet[category].append(value)
+
+print("\n📌 Extracted Medical Information:")
+print(fact_sheet)
+
