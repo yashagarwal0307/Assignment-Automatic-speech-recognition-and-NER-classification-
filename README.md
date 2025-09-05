@@ -1,4 +1,4 @@
-# Tasks.
+## Tasks.
 1) Convert audio to speech.
 2) Do Named Entity Recognition on the converted speech.
 
@@ -7,7 +7,7 @@ This project demonstrates an **end-to-end pipeline** that combines **Automatic S
 
 ---
 
-## 📌 Project Overview.
+## Project Overview.
 
 Healthcare professionals often rely on dictations, voice notes, and patient-doctor conversations. However, unstructured audio is difficult to analyze.
 This project aims to:
@@ -19,16 +19,16 @@ This project aims to:
 
 ---
 
-## 🚀 Features.
+## Features.
 
-* 🎤 **Speech-to-Text Conversion**: Convert audio recordings into accurate transcriptions.
-* 🏷️ **Entity Recognition**: Extract medical concepts like diseases, symptoms, and drugs.
-* 📑 **Fact Sheet Generation**: Summarize extracted information in structured form.
-* 📉 **Performance Evaluation**: Measure transcription accuracy using **Word Error Rate (WER)**.
+* **Speech-to-Text Conversion**: Convert audio recordings into accurate transcriptions.
+* **Entity Recognition**: Extract medical concepts like diseases, symptoms, and drugs.
+* **Fact Sheet Generation**: Summarize extracted information in structured form.
+* **Performance Evaluation**: Measure transcription accuracy using **Word Error Rate (WER)**.
 
 ---
 
-## 📂 Dataset.
+## Dataset.
 
 We use the **jarvisx17/Medical-ASR-EN dataset** from Hugging Face.
 
@@ -37,7 +37,7 @@ We use the **jarvisx17/Medical-ASR-EN dataset** from Hugging Face.
 
 ---
 
-## ⚙️ Methodology.
+## Methodology.
 
 ### 1. Automatic Speech Recognition (ASR)
 
@@ -74,7 +74,7 @@ We use the **jarvisx17/Medical-ASR-EN dataset** from Hugging Face.
 * **Word Error Rate (WER)**: Measures transcription errors at the word level.
 ---
 
-## 📊 Example Results.
+## Example Results.
 
 * **Ground Truth**: "My shoulder hurts me so much"
 * **Predicted Transcription**: "My shoulder hurts me so much.
@@ -88,7 +88,7 @@ We use the **jarvisx17/Medical-ASR-EN dataset** from Hugging Face.
 
  
 
-## 📖 Conclusion.
+## Conclusion.
 
 This project successfully integrates **ASR + NER** for the medical domain, enabling:
 
@@ -101,6 +101,6 @@ Future work can include fine-tuning domain-specific ASR/NER models or  use a mor
 
 ---
 
-✨ This project demonstrates how multimodal AI can be applied in **healthcare speech analysis**, making unstructured medical audio more useful for decision-making.
+This project demonstrates how multimodal AI can be applied in **healthcare speech analysis**, making unstructured medical audio more useful for decision-making.
 
 
