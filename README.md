@@ -68,8 +68,9 @@ We use the **jarvisx17/Medical-ASR-EN dataset** from Hugging Face.
   Test: [chest x-ray]  
   Anatomy: [lungs]  
   ```
+### 4. Map the fact sheet with the NER found by the model.
 
-### 4. Evaluation Metrics
+### 5. Evaluation Metrics
 
 * **Word Error Rate (WER)**: Measures transcription errors at the word level.
 
@@ -103,12 +104,10 @@ This project successfully integrates **ASR + NER** for the medical domain, enabl
 * Structured representation in the form of a fact sheet.
 * Reliable evaluation using **WER**.
 
-Future work can include fine-tuning domain-specific ASR/NER models (e.g., BioClinicalBERT)/ use a more vast dataset to improve accuracy in real-world clinical settings.
+Future work can include fine-tuning domain-specific ASR/NER models/ use a more vast dataset to improve accuracy in real-world clinical settings.
 
 ---
 
 ✨ This project demonstrates how multimodal AI can be applied in **healthcare speech analysis**, making unstructured medical audio more useful for decision-making.
 
----
 
-Would you like me to also create a **flow diagram (ASR → NER → Fact Sheet → Evaluation)** for your README so it looks more professional for submission?
