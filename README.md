@@ -104,7 +104,7 @@ This project successfully integrates **ASR + NER** for the medical domain, enabl
 * Structured representation in the form of a fact sheet.
 * Reliable evaluation using **WER**.
 
-Future work can include fine-tuning domain-specific ASR/NER models/ use a more vast dataset to improve accuracy in real-world clinical settings.
+Future work can include fine-tuning domain-specific ASR/NER models or  use a more vast dataset to improve accuracy in real-world clinical settings.
 
 ---
 
