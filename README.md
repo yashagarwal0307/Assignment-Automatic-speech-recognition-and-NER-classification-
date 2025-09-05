@@ -101,9 +101,9 @@ This project successfully integrates **ASR + NER** for the medical domain, enabl
 * Accurate transcription of spoken medical audio.
 * Automatic extraction of critical entities.
 * Structured representation in the form of a fact sheet.
-* Reliable evaluation using **WER** and **CER**.
+* Reliable evaluation using **WER**.
 
-Future work can include fine-tuning domain-specific ASR/NER models (e.g., BioClinicalBERT) to improve accuracy in real-world clinical settings.
+Future work can include fine-tuning domain-specific ASR/NER models (e.g., BioClinicalBERT)/ use a more vast dataset to improve accuracy in real-world clinical settings.
 
 ---
 
